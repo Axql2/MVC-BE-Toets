@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Gegenereerd op: 21 feb 2023 om 11:21
--- Serverversie: 8.0.32
--- PHP-versie: 8.1.10
+-- Gegenereerd op: 14 mrt 2023 om 11:14
+-- Serverversie: 5.7.36
+-- PHP-versie: 8.1.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,34 +18,36 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `mvc-2209a`
+-- Database: `mvc-oop-toets`
 --
-CREATE DATABASE IF NOT EXISTS `mvc-2209a` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
-USE `mvc-2209a`;
 
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `Country`
+-- Tabelstructuur voor tabel `zangeres`
 --
 
-DROP TABLE IF EXISTS `Country`;
-CREATE TABLE IF NOT EXISTS `Country` (
-  `Id` int UNSIGNED NOT NULL AUTO_INCREMENT,
-  `Name` varchar(200) NOT NULL,
+DROP TABLE IF EXISTS `zangeres`;
+CREATE TABLE IF NOT EXISTS `zangeres` (
+  `Id` tinyint(4) NOT NULL AUTO_INCREMENT,
+  `Naam` varchar(100) NOT NULL,
+  `NettoWaarde` smallint(100) NOT NULL,
+  `Land` varchar(100) NOT NULL,
+  `Mobiel` varchar(100) NOT NULL,
+  `Leeftijd` tinyint(3) NOT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
--- Gegevens worden geëxporteerd voor tabel `Country`
+-- Gegevens worden geëxporteerd voor tabel `zangeres`
 --
 
-INSERT INTO `Country` (`Id`, `Name`) VALUES
-(1, 'Nederland'),
-(2, 'Duitsland'),
-(3, 'Luxemburg'),
-(4, 'Frankrijk'),
-(5, 'Spanje');
+INSERT INTO `zangeres` (`Id`, `Naam`, `NettoWaarde`, `Land`, `Mobiel`, `Leeftijd`) VALUES
+(1, 'Rihanna', 1400, 'Barbados', '1246 2400 1862400', 35),
+(2, 'Madonna', 575, 'Verenigde Staten', '1 3452 185876', 64),
+(3, 'Taylor Swift', 570, 'Verenigde Staten', '1 5876 236512', 33),
+(4, 'Beyonce', 420, 'Verenigde Staten', '1 6794 908465', 41),
+(5, 'Jennifer Lopez', 400, 'Verenigde Staten', '1 3131 857345', 53);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
